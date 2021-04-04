@@ -1,22 +1,39 @@
-import numpy as np
+import math
+import timeit
 
-f_i = 100
+start = timeit.default_timer()
+# checking for prime
+def is_prime(n):
+   # checking for less than 1
+   if n <= 1:
+      return False
+   # checking for 2
+   elif n == 2:
+      return True
+   elif n > 2 and n % 2 == 0:
+      return False
+   else:
+      # iterating loop till square root of n
+      for i in range(3, int(math.sqrt(n)) + 1, 2):
+         # checking for factor
+         if n % i == 0:
+            # return False
+            return False
+      # returning True
+      return True
 
-print(type(f_i))
-# <class 'float'>
-
-#print(isinstance(f_i, int))
-# False
-
-#print(isinstance(f_i, float))
-# True
-
-arr = np.array([])
-parr = np.array([])
-
-for i in range(1,200):
-    arr = np.append(arr,i)   
-    print (arr[-1])
-    print(isinstance(i / (arr[-1]), int))
+for y in range(100000000000000000,100000000000000100):
+    if is_prime(y) == True:
+        print(y)
+            
+ 
 
 
+
+#Your statements here
+
+stop = timeit.default_timer()
+
+print('Time: ', stop - start)        
+
+        
