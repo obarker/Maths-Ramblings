@@ -22,7 +22,7 @@ def is_prime(n):
       # returning True
       return True
 
-for y in range(100000000000000000,100000000000000100):
+for y in range(1,1000000):
     if is_prime(y) == True:
         print(y)
             
